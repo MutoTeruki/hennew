@@ -1,0 +1,49 @@
+<%= stylesheet_link_tag 'index', :media => "all" %>
+<%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+<div class="talks-container">
+<h3>雑談一覧</h3>
+
+<h3>投稿を検索</h3>
+ <%= form_tag({controller:"talks",action:"index"}, method: :get) do %>
+   <%= text_field_tag :search %>
+   <%= submit_tag '検索する'  %>
+<% end %>
+
+<%= link_to "新規投稿へ", new_talk_path %>
+
+<% if user_signed_in? %>
+<%= link_to "マイページへ", user_path(current_user.id) %>
+<% end %>
+
+  <% @talks.each do |t| %>
+    <div class="talk">
+      <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
+      <div class="main-box">
+        <div class="left-container"><%= t.body %></div>
+        <div class="right-container">
+          <%= link_to "詳細", talk_path(t.id) %>
+          <% if user_signed_in? && current_user.id == t.user_id %>
+            <%= link_to "編集する", edit_talk_path(t.id) %>
+            <%= link_to "削除する", talk_path(t.id), method: :delete %>
+          <% end %>
+        </div>
+      </div>
+      <% if user_signed_in? %>
+        <% if current_user.already_liked?(t) %>
+            <%= link_to talk_like_path(id: t.id, talk_id: t.id), method: :delete do %>
+              <i class="fas fa-heart"></i><%= t.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to talk_likes_path(id: t.id, talk_id: t.id), method: :post do %>
+              <i class="far fa-heart"></i><%= t.likes.count %>
+            <% end %>
+        <% end %>
+      <% else %>
+          <i class="far fa-heart"></i><%= t.likes.count %>
+      <% end %>
+        <p class="time"><%= t.created_at %></p>
+    </div>
+  <% end %>
+</div>
+

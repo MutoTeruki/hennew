@@ -1,0 +1,55 @@
+<div class = "users">
+  <div class = "header">
+  </div>
+  <div class = "user_page_box">
+    <div class = "user_page_title">
+      <% if current_user.id == @user.id %>
+        マイページ
+      <% else %>
+        ユーザーページ
+      <% end %>
+    </div>
+    <div class = "user_page_contents">
+      <div class = "user_page_profile">
+        名前: <%= @user.name %><br>
+        <% if current_user.id == @user.id %>
+          メールアドレス : <%= @user.email %><br>
+        <% end %>
+        プロフィール : <%= @user.profile %><br>
+        twitter-id : <%= @user.twitter_id%><br>
+        instagram-id : <%= @user.instagram_id%><br>
+      </div>
+      <div class = "user_page_image">
+      </div>
+    </div>
+    <div class = "user_talk">
+      <div class = "user_talk_title">
+        ユーザーの投稿一覧
+      </div>
+      <div class = "user_talk_contents">
+        <% @user.talks.each do |t| %>
+          <%= t.body %>
+          <%= t.created_at%><br>
+        <% end %>
+      </div>
+    </div>
+    <div class = "user_choice">
+        <% if @user.id == current_user.id %>
+        <% else %>
+          <% if @isRoom == true %>
+            <a href="/rooms/<%= @roomId%>" class="user_buttons">会話する</a>
+          <% else %>
+            <%= form_for @room do |f| %>
+              <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, :value=> @user.id %>
+              <% end %>
+              <%= f.submit "始める", class: "user_buttons"%>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "user_buttons" %>
+    </div>
+  </div>
+  <div class = "footer">
+  </div>
+</div>

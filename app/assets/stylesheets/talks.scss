@@ -1,0 +1,16 @@
+// Place all the styles related to the talks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.talks{
+    .header{
+        width: 100%;
+        height: 360px;
+        background-image: image-url("new_talk_header.jpg");
+    }
+    .talks_new_page{
+        width: 100%;
+        height: 1200px;
+        background-color:  #231601;
+    }
+}

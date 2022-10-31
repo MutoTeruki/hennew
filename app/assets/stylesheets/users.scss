@@ -1,0 +1,215 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.users{
+    .header{
+        background-image: image-url('mypage_header.jpg');
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 400px;
+    }
+    .dm_header{
+        background-image: image-url('dm_header.jpg');
+        position: relative;
+        background-size: cover;
+        background-position: center bottom;
+        width: 100%;
+        height: 500px;
+    }
+    .user_page_box{
+        width: 100%;
+        height: 1000px;
+        background-color: #231601;
+        .user_page_title{
+            width: 1080px;
+            height: 60px;
+            color: #FFFFFF;
+            margin: auto;
+            font-size: 36px;
+
+        }
+        .user_page_contents{
+            display: flex;
+            justify-content: space-between;
+            .user_page_profile{
+                width: 440px;
+                height: 360px;
+                color: #FFFFFF;
+                font-size: 24px;
+                line-height: 3em;
+                padding-left: 100px;
+                overflow: auto;
+            }
+            .user_page_image{
+                width: 50%;
+                height: 360px;
+                background-image: image-url("piece.jpg");
+                background-position: center;
+                margin: auto;
+                clip-path: ellipse(250px 170px at 320px 170px);
+            }        
+        }
+        .user_talk{
+            width: 1080px;
+            height: 320px;
+            margin:auto;
+            .user_talk_title{
+                width: 100%;
+                height: 42px;
+                padding-top: 18px;
+                font-size: 24px;
+                text-align: center;
+                color: white;
+            }
+            .user_talk_contents{
+                width: 1050px;
+                margin: auto;
+                height: 240px;
+                background-color: #e9d77c;
+                padding-left: 30px;
+                border-radius: 16px 16px 16px 16px;
+                font-size: 16px;
+                color: #FFFFFF;
+                line-height: 2em;
+                overflow: auto;
+            }
+        }
+        .user_choice{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 1080px;
+            height: 56px;
+            margin: auto;
+            .user_buttons{
+                width: 200px;
+                height:100%;
+                background-color: #8A4444;
+                border-radius: 8px 8px 8px 8px;
+                font-size: 36px;
+                color: #FFFFFF;
+                text-align: center;
+                border: 0px none;
+                text-decoration: none;
+            }
+        }
+    }
+    .dm_page_box{
+        width: 100%;
+        height: 1200px;
+        background-color: #231601;
+        .dm_title{
+            width: 1080px;
+            height: 60px;
+            color: #FFFFFF;
+            margin: auto;
+            font-size: 48px;
+        }
+        .dm_box{
+            width: 1080px;
+            height: 360px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            .dm_list{
+                width: 540px;
+                height: 360px;
+                .dm_list_title{
+                    width: 100%;
+                    height: 48px;
+                    font-size: 24px;
+                    color: #FFFFFF;
+                }
+                .dm_list_contents{
+                    width: 520px;
+                    height: 292px;
+                    background-color: #8A4444;
+                    overflow: auto;
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    border-radius: 16px 16px 16px 16px;
+                }
+            }
+            .dm_img{
+                width: 500px;
+                height: 360px;
+                border-radius: 32px 32px 32px 32px;
+            }
+        }
+        .user_search{
+            width: 1080px;
+            height: 200px;
+            margin: auto;
+            margin-top: 100px;
+            .user_search_title{
+                width: 100%;
+                height: 40px;
+                margin-top: 32px;
+                font-size: 24px;
+                color: #FFFFFF;
+                text-align: center;
+            }
+            .user_search_box{
+                width: 100%;
+                height: 160px;
+                display:flex;
+                justify-content: space-around;
+                .user_search_field{
+                    width: 600px;
+                    height: 48px;
+                    background-color:white;
+                    border-radius: 6px 6px 6px 6px;
+                    font-size: 24px;
+                }
+                .user_search_button{
+                    width: 200px;
+                    height: 48px;
+                    font-size: 32px;
+                    background-color: #2E3360;
+                    border-radius: 6px 6px 6px 6px;
+                    border: 0px none;
+                }
+            }
+        }
+        .lower_comment{
+            margin-top: 300px;
+            width: 1080px;
+            height: 48px;
+            font-size: 36px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+    }
+    .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 360px;
+    background-image: image-url('mypage_footer.jpg');
+    background-size: cover;
+    background-position: center;
+    }
+    .dm_footer{
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 400px;
+        background-image: image-url('dm_footer.jpg');
+        background-size: cover;
+        background-position: left;
+        
+    }
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        text-decoration: underline;
+    }
+
+}

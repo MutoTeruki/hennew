@@ -1,0 +1,39 @@
+<div class ="users">
+  <div class = "dm_header">
+  </div>
+  <div class = "dm_page_box">
+    <div class = "dm_title">
+      DM
+    </div>
+    <div class = "dm_box">
+      <div class = "dm_list">
+        <div class = "dm_list_title">
+          ユーザー一覧
+        </div>
+        <div class = "dm_list_contents">
+          <% @users.each do |u| %>
+            <a href="/users/<%= u.id %>"><%= u.name %> さん</a>
+          <hr>
+          <% end %>
+        </div>
+      </div>
+      <%= image_tag 'mailbox.jpg', class: "dm_img"%>
+    </div>
+    <div class = "user_search">
+      <div class = "user_search_title">
+        ユーザーを検索
+      </div>
+      <div class = "user_search_box">
+        <%= form_tag({controller:"users",action:"index"}, method: :get) do %>
+          <%= text_field_tag :search, "", {class: "user_search_field"} %>
+          <%= submit_tag '検索する', class: "user_search_button"%>
+        <% end %>
+      </div>
+      <div class = "lower_comment">
+        勇気を出して話を聞いてみよう
+      </div>
+    </div>
+  </div>
+  <div class = "dm_footer">
+  </div>
+</div>

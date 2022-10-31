@@ -1,0 +1,27 @@
+<h1>一週間の勉強時間を記録しよう</h1>
+
+<%= form_for @study_record do |f| %>
+  <div class="field">
+    <h1>数学</h1>
+    <%= f.number_field :study_hours1, :value => 0, :min => 0, :max => 120,:size => 50 %>
+    時間
+    <%= f.number_field :study_minutes1, :value => 0, :min => 0, :max => 59,:size => 50 %>
+    分
+  </div>
+  <div class="field">
+  <h1>経済学</h1>
+  <%= f.number_field :study_hours2, :value => 0, :min => 0, :max => 120,:size => 50 %>
+  時間
+  <%= f.number_field :study_minutes2, :value => 0, :min => 0, :max => 59,:size => 50 %>
+  分
+  </div>
+  <h1>大学の課題</h1>
+  <%= f.number_field :study_hours3, :value => 0, :min => 0, :max => 120,:size => 50 %>
+  時間
+  <%= f.number_field :study_minutes3, :value => 0, :min => 0, :max => 59,:size => 50 %>
+  分
+  </div>
+  <p><%= f.submit "勉強時間を記録する" %></p>
+<% end %>
+
+<%= link_to "勉強時間ランキングを見る", study_records_path %>

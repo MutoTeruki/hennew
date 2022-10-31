@@ -1,0 +1,204 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.profile{
+    .background {
+        background-image: image-url('top-back.jpg');
+        background-position:center bottom;
+        position: relative;
+        background-size: cover;
+        width: 100%;
+        height: 800px;
+        left: 0px;
+        top: 0px;
+
+    }
+    .header{
+        background-image: image-url('mypage_header.jpg');
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 400px;
+
+    }
+
+    .main_block {
+        position: absolute;
+        width: 100%;
+        height: 1840px;
+        background-color: #231601;
+        padding-top: 40px;
+
+        .title {
+            width: 720px;
+            height: 70px;
+            margin: auto;
+            background: #8A4444;
+            padding-top: 26px;
+            border-radius: 32px 32px 32px 32px;
+            font-size: 36px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        
+        .about_container {
+            width: 960px;
+            height: 190px;
+            margin: auto;
+            margin-top: 32px;
+            padding-top: 10px;
+            padding-left: 60px;
+            padding-right: 60px;
+            background: #2E3360;
+            border-radius: 32px 32px 32px 32px;
+            font-size: 24px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .howto_box{
+            width: 1080px;
+            height: 800px;
+            margin:auto;
+            .howto_title{
+                padding-top: 80px;
+                font-size: 48px;
+                color: #FFFFFF;
+                text-align: center;
+            }
+            .content_upper{
+                width: 100%;
+                height: 320px;
+                display: flex;
+                justify-content: space-between;
+                .content_img{
+                    width: 320px;
+                    height: 320px;
+                    object-fit: cover;
+                    border-radius: 16px 16px 16px 16px;
+                }          
+            }
+            .content_lower{
+                width: 100%;
+                height: 320px;
+                display: flex;
+                justify-content: space-around;
+                .content_img{
+                    width: 320px;
+                    height: 320px;
+                    object-fit: cover;
+                    border-radius: 16px 16px 16px 16px;
+                }          
+            }
+            .content_text_upper{
+                width: 100%;
+                height: 60px;
+                display: flex;
+                justify-content: space-between;
+                .content_name{
+                    height: 60px;
+                    font-size: 40px;
+                    width: 320px;
+                    color: white;
+                    text-align: center;
+                }
+            }
+            .content_text_lower{
+                width: 100%;
+                height: 60px;
+                background-color: none;
+                display: flex;
+                justify-content: space-around;
+                .content_name{
+                    height: 60px;
+                    font-size: 40px;
+                    width: 320px;
+                    color: white;
+                    text-align: center;
+                }
+            }        
+        }
+
+    }
+    .user_page{
+        width: 100%;
+        height: 1000px;
+        background-color: #231601;
+        box-sizing: border-box;
+        .user_box{
+            width: 1080px;
+            height: 800px;
+            background-color: none;
+            margin: auto;
+            .user_title{
+                width: 100%;
+                height: 150px;
+                background-color: none;
+
+                text-align: center;
+                font-size: 36px;
+                color: #FFFFFF;
+            }
+            .user_contents{
+                display: flex;
+                justify-content: space-between;
+                .user_profile{
+                    width: 50%;
+                    height: 320px;
+                    border-radius: 16px 16px 16px 16px;
+                    border: 0px none;
+                    padding-left: 20px;
+                    font-size: 36px;
+                    color: #FFFFFF;
+                    .edit{
+                        height: 40px;
+                        width: 120px;
+                        background-color: rgb(37, 92, 155);
+                        border-radius: 4px 4px 4px 4px;
+                        border: 0px none;
+                        color: #FFFFFF;
+                    }
+                }
+                .user_image{
+                    width: 40%;
+                    height: 300px;
+                    padding-right: 50px;
+                    background-image: image-url("gingerbread.jpg");
+                    background-position: 30% 20%;
+                    clip-path: circle(150px at 320px 150px);
+                }
+            }
+
+            .button_area{
+                width: 100%;
+                height: 400px;
+                padding-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                .button{
+                    width: 280px;
+                    height: 60px;
+                    border-radius: 12px 12px 12px 12px;
+                    border: 0px none;
+                    background-color: #8A4444;
+                    font-size: 24px;
+                    color: #FFFFFF;
+                    margin-top: 32px;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+    .footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 360px;
+        background-image: image-url('mypage_footer.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}

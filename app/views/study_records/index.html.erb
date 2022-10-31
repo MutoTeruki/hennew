@@ -1,0 +1,28 @@
+<h1>みんなの勉強時間ランキング</h1>
+<p>一週間の勉強量を競い合おう</p>
+  <h2>ランキング</h2>
+  <p>数学</p>
+  <% @rank_study_records1.first(3).each do |t| %>
+    <%= t.user.name %>
+    <%= t.study_hours1 %>
+    <%= @hour%>
+    <%= t.study_minutes1 %>
+    <%= @minute %></br>
+  <% end %>
+  <p>経済学</p>
+  <% @rank_study_records2.first(3).each do |t| %>
+    <%= t.user.name %>
+    <%= t.study_hours2 %>
+    <%= @hour%>
+    <%= t.study_minutes2 %>
+    <%= @minute %></br>
+  <% end %>
+  <p>大学の課題</p>
+  <% @rank_study_records3.first(3).each do |t| %>
+    <%= t.user.name %>
+    <%= t.study_hours3 %>
+    <%= @hour%>
+    <%= t.study_minutes3 %>
+    <%= @minute %></br>
+  <% end %>
+<%= link_to "勉強時間を記録しに行く", new_study_record_path %>

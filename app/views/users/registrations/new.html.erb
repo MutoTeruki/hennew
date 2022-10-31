@@ -1,0 +1,38 @@
+<div class="sign_up">
+  <div class="sign_up_box">
+    <div class="title_area">
+      <div class ="title">
+        <h1>新規登録</h1>
+      </div>
+    </div>
+    <div class="field_area">
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.text_field :name, autofocus: true, atuocomplete: "name", class: "field_input", :placeholder => "名前を入力してください" %>
+      </div>
+
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field_input", :placeholder => "メールアドレスを入力してください" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password", class: "field_input", :placeholder => "パスワードを入力してください(6文字以上)" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field_input", :placeholder => "パスワードを再度入力してください" %>
+      </div>
+    </div>
+
+    <div class="submit">
+      <div class="actions">
+        <%= f.submit "登録する", class: "submit_button" %>
+      </div>
+      <% end %>
+      <%= render "users/shared/links" %>
+    </div>
+  </div>
+</div>

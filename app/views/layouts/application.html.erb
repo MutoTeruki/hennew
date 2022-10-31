@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hennew</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <header>
+      <h1>Hennew</h1>
+      <div class="header-list">
+      <ul>
+        <li><%= link_to "はじめに" ,profiles_path %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "マイページ", profile_path(current_user.id) %></li>
+        <li><%= link_to "DM", users_path(current_user.id) %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+      <% end %>
+        <li><%= link_to "雑談", talks_path %></li>
+        <li><%= link_to "新規投稿",new_talk_path %></li>
+        <li><%= link_to "ランキング",study_records_path %></li>
+      </ul>
+      </div>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+     <p>Copyright © AIUEO All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
